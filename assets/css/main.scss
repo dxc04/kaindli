@@ -1,0 +1,245 @@
+@font-face {
+  font-family: 'Pattaya';
+  src:  url('~assets/fonts/Pattaya-Regular.ttf'),
+}
+
+#app-grid {
+    padding-left: 0 !important;
+}
+
+.container {
+    min-height: 100vh;
+}
+
+.content-container {
+    background: #f9f9f9 !important;
+    
+}
+
+.title-heading {
+    font-family: Pattaya !important;
+    font-size: 24px !important;
+    color: hsl(141, 71%, 48%) !important;
+}
+
+.app-title-web {
+    text-align: center;
+    margin-left: -5px;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1.3px solid #f1f1f1;
+}
+
+.app-title-small {
+    text-align: center;
+    border: none;
+}
+
+.layout-sidebar {
+    text-align: left;
+    border-right: 1px solid #f1f1f1;
+    width: 250px;
+}
+
+.app-primary-color {
+    color: hsl(141, 71%, 48%) !important;
+}
+
+.show_add_request:hover, .create-icon span:hover {
+    color: #7fd673 !important;
+    cursor: pointer;
+}
+
+.add-request-container > .uk-offcanvas-flip .uk-offcanvas-bar {
+    width: 150px !important;
+}
+
+.create-new-form .uk-offcanvas-bar {
+    width: 600px !important;
+}
+
+ul#add-new-request {
+    text-align: center;
+    margin-top: 30px;
+}
+
+ul#add-new-request li {
+    padding-bottom: 20px;
+}
+
+ul#add-new-request li div {
+    margin-left: -5px;
+    cursor: pointer;
+}
+
+ul#add-new-request a:hover, ul#add-new-request li:hover, 
+ul.main-nav li a:hover, ul.main-nav li.uk-active span {
+    color: #7fd673 !important;
+}
+
+.main-nav {
+    margin-top: 20px !important;
+}
+
+ul.main-nav li {
+    padding: 10px 65px 8px !important;
+    font-size: 12px !important;
+}
+
+ul.main-nav li > a {
+    padding-top: 10px;
+}
+
+ul.main-nav li:hover {
+    border-right: 1.5px solid #7fd673 !important;
+    color: #7fd673 !important;
+}
+
+.container {
+    display: block !important;
+    text-align: left !important;
+}
+
+/* Begin - User Info Part */
+.box {
+  width: 250px;
+  height: 300px;
+  background: lighten(#f0f4c3, 50%);
+  position: absolute;
+  overflow: hidden;
+  transform: translate3d(2, 0, 0);
+  bottom: 0px;
+}
+
+.wave {
+  opacity: .4;
+  position: absolute;
+  top: 30%;
+  right: -28%;
+  background: #bff1d8;
+  width: 450px;
+  height: 450px;
+  margin-right: 20px;
+  margin-top: -60px;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: drift 3000ms infinite linear;
+}
+
+.wave.-three {
+  animation: drift 5000ms infinite linear;
+}
+
+.wave.-two {
+  animation: drift 8000ms infinite linear;
+  opacity: .1;
+  background: yellow;
+  margin-bottom: -10px;
+}
+
+.box:after {
+  content: '';
+  display: block;
+  left: 10;
+  top: 0;
+  z-index: 11;
+  transform: translate3d(0, 0, 0);
+}
+
+.user-info {
+  position: relative;
+  top: 70px;
+  width: 100%;
+  z-index: 1;
+  text-align: center;
+  transform: translate3d(0, 0, 0);
+}
+@keyframes drift {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}
+
+/* End - User Info Part */
+
+/* Begin Request Tiles */
+.uk-grid>* {
+    padding-left: 20px !important;
+}
+
+.request {
+    -webkit-box-shadow: 0 0px 3px rgba(0, 0, 0, .08) !important;
+    box-shadow: 0 0px 3px rgba(0, 0, 0, .08) !important;
+}
+.request > .uk-card-body, .request > .uk-card-footer {
+    padding: 25px !important;
+}
+
+.request-main-info {
+    padding-top: 10px;
+}
+
+.request-title {
+    font-size: 16px !important;
+}
+
+.requested-at {
+    font-size: 10px !important;
+}
+
+.request-type-badge {
+    background-color: #71bd2a;
+    font-size: 8px !important;
+    color: white;
+    padding: 3px 5px !important;
+    right: unset !important;
+    margin-top: -10px !important;
+}
+
+.document-type {
+    background-color: #18c9e4 !important;
+}
+
+.equipment-type {
+    background-color: #b42bcc !important;
+}
+
+.loan-type {
+
+}
+
+.vacation-leave-type {
+
+}
+
+.requested-by-icon {
+    margin-left: 10px !important;
+}
+
+.requested-by-detail {
+  width: 15px !important;
+  height: 13px;
+  border-radius: 50%;
+  font-size: 10px;
+  color: #fff;
+  text-align: center;
+  background: #8bbe4f;
+  padding: 3px !important;
+  margin-top: 5px !important;
+  margin-left: 22px !important;
+}
+
+.request-details {
+    margin-left: -10px !important;
+}
+
+.request-detail-label {
+    font-size: 9px !important;
+}
+
+.request-detail {
+    font-size: 9px !important;
+}
+/* End Request Cards */
+
+[v-cloak] {
+}

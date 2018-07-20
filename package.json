@@ -1,0 +1,42 @@
+{
+  "name": "emquest",
+  "version": "1.0.0",
+  "description": "Employee Requests Portal",
+  "author": "Dixie Philamerah Atay",
+  "private": true,
+  "config": {
+    "nuxt": {
+      "port": "1336"
+    }
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.0",
+    "@fortawesome/free-regular-svg-icons": "^5.1.0",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0",
+    "@fortawesome/vue-fontawesome": "^0.1.0",
+    "@vuikit/icons": "^0.8.1",
+    "@vuikit/theme": "^0.8.0",
+    "lodash": "^4.17.10",
+    "nuxt": "^1.4.1",
+    "please-wait": "0.0.5",
+    "vuikit": "^0.8.5"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "css-loader": "^1.0.0",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.0.3"
+  }
+}
