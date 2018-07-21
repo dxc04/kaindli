@@ -48,13 +48,13 @@ module.exports = {
     ]
   },
   css: [
+      '~assets/css/vuikit.min.css',
       {
         src: '~assets/css/main.scss',
         lang: 'scss'
       }
   ],
   plugins: [
-      {src: '~plugins/vuikit.js', ssr: false},
-      {src: '~plugins/font-awesome.js', ssr: true}
+      {src: '~plugins/vuikit.js', ssr: true}
   ]
 }
