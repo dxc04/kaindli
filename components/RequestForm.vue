@@ -1,6 +1,6 @@
 <template>
   <vk-offcanvas-content>
-      <vk-offcanvas flipped overlay stuck="true" mode="push" :show.sync="show_new_request_form" class="create-new-form">
+      <vk-offcanvas flipped overlay :show.sync="show_new_request_form" class="create-new-form">
           <h3>{{ formTitle }}</h3>
           <vk-offcanvas-close v-on:click="$emit('close-form', false)"></vk-offcanvas-close>
       </vk-offcanvas>

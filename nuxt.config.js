@@ -48,7 +48,8 @@ module.exports = {
     ]
   },
   css: [
-      '~assets/css/vuikit.min.css',
+      //'~assets/css/vuikit.min.css',
+      '@vuikit/theme',
       {
         src: '~assets/css/main.scss',
         lang: 'scss'
