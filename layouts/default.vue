@@ -1,6 +1,6 @@
 <template>
 
-    <vk-grid id="app-grid" v-cloak>
+    <vk-grid id="app-grid">
         <div class="layout-sidebar uk-visible@m" uk-height-viewport="expand: true">
             <div class="title-heading app-title-web">emquest</div>
             <vk-nav class="uk-align-left main-nav uk-width-1-1">
@@ -24,7 +24,7 @@
         <div class="uk-width-expand content-container">
  
             <vk-navbar transparent>
-                <vk-icon icon="menu" ratio="1.5" class="uk-margin-small-left uk-hidden@m" @click="defaultNav"></vk-icon>
+                <vk-icon icon="menu" ratio="1.5" class="uk-margin-small-left uk-hidden@m"></vk-icon>
 
                 <vk-navbar-logo class="title-heading app-title-small uk-hidden@s" slot="center">emquest</vk-navbar-logo>
 
@@ -36,41 +36,7 @@
 
             <nuxt class="uk-height-max-large"/>
 
-            <vk-offcanvas-content>
-                <vk-offcanvas overlay :show.sync="show">
-                    <vk-offcanvas-close @click="show = false"></vk-offcanvas-close>
-                    <vk-nav class="uk-margin-auto-vertical uk-align-left">
-                        <vk-nav-item-header title="Request"></vk-nav-item-header>
-                        <vk-nav-item href="#" icon="copy" title="Documents"></vk-nav-item>
-                        <vk-nav-item href="#" icon="laptop" title="Equipments"></vk-nav-item>
-                        <vk-nav-item href="#" icon="calendar" title="Vacation Leave"></vk-nav-item>
-                        <vk-nav-item href="#" icon="credit-card" title="Loans"></vk-nav-item>
-
-                        <vk-nav-item-header title="Employees"></vk-nav-item-header>
-                        <vk-nav-item href="#" icon="bolt" title="Overview"></vk-nav-item>
-                        <vk-nav-item href="#" icon="thumbnails" title="Manage"></vk-nav-item>
-                    </vk-nav>
-                </vk-offcanvas>
-            </vk-offcanvas-content>
         </div>
     </vk-grid>
     
 </template>
-
-<style>
-</style>
-
-<script>
-  export default {
-      data () {
-          return {
-              show: false,
-          }
-      },
-      methods: {
-          defaultNav () {
-              this.show = !this.show
-          },
-      }
-  }
-</script>

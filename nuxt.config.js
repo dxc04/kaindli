@@ -18,7 +18,7 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  loading: '~/components/loading.vue',
+  loading: true, //'~/components/loading.vue',
   loadingIndicator: {
       name: 'circle',
       color: '#3B8070',
@@ -48,12 +48,11 @@ module.exports = {
     ]
   },
   css: [
-      //'~assets/css/vuikit.min.css',
-      '@vuikit/theme',
       {
         src: '~assets/css/main.scss',
         lang: 'scss'
-      }
+      },
+      '@vuikit/theme/dist/vuikit.min.css',
   ],
   plugins: [
       {src: '~plugins/vuikit.js', ssr: true}

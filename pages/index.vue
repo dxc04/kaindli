@@ -6,7 +6,7 @@
                   <div class="uk-visible-toggle">
                       <vk-icon icon="plus-circle" ratio="1.6"></vk-icon><span class="uk-text-large uk-padding-remove-bottom"> new request...</span>
                       <div class="uk-invisible-hover uk-align-bottom uk-margin-small create-icon">
-                          <vk-icon @click="showNewRequestForm('document')" icon="file" ratio="2" class="uk-padding-small" v-vk-tooltip.bottom="'Document'"></vk-icon>
+                          <nuxt-link to="/new-request"><vk-icon icon="file" ratio="2" class="uk-padding-small" v-vk-tooltip.bottom="'Document'"></vk-icon></nuxt-link>
                           <vk-icon @click="showNewRequestForm('equipment')" icon="laptop" ratio="2" class="uk-padding-small" v-vk-tooltip.bottom="'Equipment'"></vk-icon>
                           <vk-icon @click="showNewRequestForm('loan')" href="#" icon="credit-card" ratio="2" class="uk-padding-small" v-vk-tooltip.bottom="'Loan'"></vk-icon>
                           <vk-icon @click="showNewRequestForm('leave')" href="#" icon="calendar" ratio="2" class="uk-padding-small" v-vk-tooltip.bottom="'Vacation Leave'"></vk-icon>
