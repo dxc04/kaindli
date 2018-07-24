@@ -1,22 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Pattaya');
 
-#app-grid {
-    padding-left: 0 !important;
-}
-
 .container {
     min-height: 100vh;
 }
 
-.content-container {
-    background: #f9f9f9 !important;
-    
-}
-
-.title-heading {
+.title-heading a {
     font-family: Pattaya !important;
     font-size: 24px !important;
     color: hsl(141, 71%, 48%) !important;
+    text-decoration: none !important;
 }
 
 .app-title-web {
@@ -25,11 +17,6 @@
     padding-top: 10px !important;
     padding-bottom: 10px !important;
     border-bottom: 1.3px solid #f1f1f1;
-}
-
-.app-title-small {
-    text-align: center;
-    border: none;
 }
 
 .layout-sidebar {
@@ -42,6 +29,19 @@
     color: hsl(141, 71%, 48%) !important;
 }
 
+/* Transition */
+.slide-left-enter,
+.slide-right-leave-active {
+    opacity: 0;
+    transform: translate(30px, 0);
+}
+.slide-left-leave-active,
+.slide-right-enter {
+    opacity: 0;
+    transform: translate(-30px, 0);
+}
+/* End Transition*/
+
 .show_add_request:hover, .create-icon span:hover {
     color: #7fd673 !important;
     cursor: pointer;
@@ -52,24 +52,10 @@
 }
 
 .create-new-form .uk-offcanvas-bar {
-    width: 100% !important;
+    width: 88% !important;
 }
 
-ul#add-new-request {
-    text-align: center;
-    margin-top: 30px;
-}
-
-ul#add-new-request li {
-    padding-bottom: 20px;
-}
-
-ul#add-new-request li div {
-    margin-left: -5px;
-    cursor: pointer;
-}
-
-ul#add-new-request a:hover, ul#add-new-request li:hover, 
+ul#add-new-request li:hover, 
 ul.main-nav li a:hover, ul.main-nav li.uk-active span {
     color: #7fd673 !important;
 }
