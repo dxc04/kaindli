@@ -17,7 +17,7 @@
           </vk-grid>
       </div>
 
-      <RequestForm :category="new_request" v-bind:show_new_request_form="show_new_request_form" v-on:close-form="closeForm"/>
+      <RequestForm :category="new_request" :show_new_request_form="show_new_request_form" v-on:close-form="closeForm"/>
   </section>
 </template>
 
@@ -59,7 +59,7 @@ export default {
                 }
             ],
             show_new_request_form: false,
-            new_request: 'document'
+            new_request: 'document',
         };
     },
     methods: {
