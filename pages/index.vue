@@ -3,12 +3,12 @@
       <div class="uk-container">
           <vk-grid v-vk-height-match="{ target: '> div > .uk-card' }" class="uk-child-width-1-2@s uk-child-width-1-2@m uk-child-width-1-4@l">
               <div class="uk-placeholder uk-text-center uk-padding-remove-bottom">
-                  <div class="uk-visible-toggle">
+                  <div>
                       <vk-icon icon="plus-circle" ratio="1.6"></vk-icon><span class="uk-text-large uk-padding-remove-bottom"> new request...</span>
-                      <div class="uk-invisible-hover uk-align-bottom uk-margin-small create-icon">
+                      <div class="uk-align-bottom uk-margin-small uk-text-muted create-icon">
                           <vk-icon @click="showNewRequestForm('document')" icon="file" ratio="2" class="uk-padding-small" v-vk-tooltip.bottom="'Document'"></vk-icon>
                           <vk-icon @click="showNewRequestForm('equipment')" icon="laptop" ratio="2" class="uk-padding-small" v-vk-tooltip.bottom="'Equipment'"></vk-icon>
-                          <vk-icon @click="showNewRequestForm('loan')" href="#" icon="credit-card" ratio="2" class="uk-padding-small" v-vk-tooltip.bottom="'Loan'"></vk-icon>
+                          <vk-icon @click="showNewRequestForm('credit')" href="#" icon="credit-card" ratio="2" class="uk-padding-small" v-vk-tooltip.bottom="'Credit'"></vk-icon>
                           <vk-icon @click="showNewRequestForm('leave')" href="#" icon="calendar" ratio="2" class="uk-padding-small" v-vk-tooltip.bottom="'Vacation Leave'"></vk-icon>
                       </div>
                   </div>
@@ -56,7 +56,16 @@ export default {
                     requestor: 'Dixie Atay',
                     due_at: 'July 28, 2018',
                     status: 'In Progress'
-                }
+                },
+                {
+                    request_type: 'credit',
+                    title: 'Cash Advance',
+                    context: '',
+                    created_at: 'July 04, 2018',
+                    requestor: 'Dixie Atay',
+                    due_at: 'July 28, 2018',
+                    status: 'Open'
+                },
             ],
             show_new_request_form: false,
             new_request: 'document',
@@ -67,7 +76,7 @@ export default {
             this.show_new_request_form = true
             this.new_request = new_request
         },
-        closeForm (show_new_request_form) {
+        closeForm () {
            this.show_new_request_form = false;
         }
     }
