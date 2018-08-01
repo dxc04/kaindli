@@ -2,14 +2,14 @@
   <section class="container">
       <div class="uk-container">
           <vk-grid v-vk-height-match="{ target: '> div > .uk-card' }" class="uk-child-width-1-2@s uk-child-width-1-2@m uk-child-width-1-4@l">
-              <div class="uk-placeholder uk-text-center uk-padding-remove-bottom">
-                  <div>
-                      <vk-icon icon="plus-circle" ratio="1.6"></vk-icon><span class="uk-text-large uk-padding-remove-bottom"> new request...</span>
-                      <div class="uk-align-bottom uk-margin-small uk-text-muted create-icon">
-                          <vk-icon @click="showNewRequestForm('document')" icon="file" ratio="2" class="uk-padding-small" v-vk-tooltip.bottom="'Document'"></vk-icon>
-                          <vk-icon @click="showNewRequestForm('equipment')" icon="laptop" ratio="2" class="uk-padding-small" v-vk-tooltip.bottom="'Equipment'"></vk-icon>
-                          <vk-icon @click="showNewRequestForm('credit')" href="#" icon="credit-card" ratio="2" class="uk-padding-small" v-vk-tooltip.bottom="'Credit'"></vk-icon>
-                          <vk-icon @click="showNewRequestForm('leave')" href="#" icon="calendar" ratio="2" class="uk-padding-small" v-vk-tooltip.bottom="'Vacation Leave'"></vk-icon>
+              <div id="new-request-placeholder" class="uk-placeholder uk-text-center uk-padding-remove-bottom">
+                  <div class="uk-card">
+                      <vk-icon icon="plus-circle" ratio="1.2"></vk-icon><span class="uk-text-large"> new request...</span>
+                      <div class="uk-margin-small uk-text-muted create-icon">
+                          <vk-icon @click="showNewRequestForm('document')" icon="file" ratio="1.2" class="uk-padding-small" v-vk-tooltip.bottom="'Document'"></vk-icon>
+                          <vk-icon @click="showNewRequestForm('equipment')" icon="laptop" ratio="1.2" class="uk-padding-small" v-vk-tooltip.bottom="'Equipment'"></vk-icon>
+                          <vk-icon @click="showNewRequestForm('credit')" href="#" icon="credit-card" ratio="1.2" class="uk-padding-small" v-vk-tooltip.bottom="'Credit'"></vk-icon>
+                          <vk-icon @click="showNewRequestForm('leave')" href="#" icon="calendar" ratio="1.2" class="uk-padding-small" v-vk-tooltip.bottom="'Vacation Leave'"></vk-icon>
                       </div>
                   </div>
               </div>

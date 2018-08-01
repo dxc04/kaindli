@@ -27,6 +27,7 @@
     "@vuikit/theme": "^0.8.0",
     "lodash": "^4.17.10",
     "nuxt": "^1.4.1",
+    "vue-datepicker-local": "^1.0.18",
     "vuikit": "^0.8.5"
   },
   "devDependencies": {

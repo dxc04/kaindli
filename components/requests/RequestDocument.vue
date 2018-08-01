@@ -19,10 +19,11 @@
         </div>
 
         <div class="uk-margin">
-            <div class="uk-form-label">Radio</div>
+            <div class="uk-form-label">Needed by</div>
             <div class="uk-form-controls">
-                <label><input class="uk-radio" type="radio" name="radio1"> Option 01</label><br>
-                <label><input class="uk-radio" type="radio" name="radio1"> Option 02</label>
+                <no-ssr>
+                    <vue-datepicker-local></vue-datepicker-local>
+                </no-ssr>
             </div>
         </div>
 
@@ -30,6 +31,5 @@
 </template>
 
 <script>
-export default {
-}
+
 </script>

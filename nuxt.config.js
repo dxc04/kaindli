@@ -48,7 +48,8 @@ module.exports = {
         new webpack.ProvidePlugin({
           '_': 'lodash'
         })
-    ]
+    ],
+    vendor: ['vue-datepicker-local']
   },
   css: [
       '@vuikit/theme/dist/vuikit.min.css',
@@ -58,6 +59,7 @@ module.exports = {
       },
   ],
   plugins: [
-      {src: '~plugins/vuikit.js', ssr: true}
+      {src: '~plugins/vuikit.js', ssr: true},
+      {src: '~plugins/datepicker.js', ssr: false}
   ]
 }

@@ -9,11 +9,11 @@
             <vk-grid gutter="collapse" class="uk-child-width-expand">
                 <div class="uk-width-1-4">
                     <vk-grid class="uk-flex-top ">
-                        <div class="uk-width-1-5">
+                        <div class="uk-width-1-5 uk-padding-remove-right">
                             <vk-icon icon="user"></vk-icon>
                         </div>
-                        <div class="uk-width-auto uk-padding-remove-bottom uk-padding-remove-left">
-                            <p class="request-detail requested-by-detail">{{ abbreviate}}</p>
+                        <div class="uk-width-expand uk-padding-remove-bottom uk-padding-remove-left uk-padding-remove-right">
+                            <p id="user-name-abbr" class="request-detail requested-by-detail">{{ abbreviate}}</p>
                         </div>
                     </vk-grid>
                 </div>
