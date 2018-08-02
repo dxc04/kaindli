@@ -60,6 +60,7 @@ module.exports = {
   ],
   plugins: [
       {src: '~plugins/vuikit.js', ssr: true},
-      {src: '~plugins/datepicker.js', ssr: false}
+      {src: '~plugins/datepicker.js', ssr: false},
+      '~/plugins/mixins'
   ]
 }

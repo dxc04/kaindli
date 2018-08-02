@@ -13,7 +13,7 @@
           </vk-offcanvas>
       </vk-offcanvas-content>
 
-      <vk-modal class="uk-visible@l" :show.sync="show_new_request_form" overflow-auto stuck>
+      <vk-modal class="uk-visible@l" :show.sync="show_new_request_form" stuck>
           <vk-modal-title slot="header">{{ formTitle }}</vk-modal-title>
           <p>
               <RequestDocument v-if="category == 'document'" />
