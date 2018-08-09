@@ -25,7 +25,21 @@
                     <vue-datepicker-local v-model="needed_by" :local="localDatepicker"></vue-datepicker-local>
                 </no-ssr>
             </div>
-        </div>
+        </div> 
+
+        <div class="uk-margin">
+            <div class="uk-form-controls">
+                <no-ssr>
+                    <vue-tags-input
+                        v-model="tag"
+                        placeholder="Mark request as..."
+                        :tags="tags"
+                        :autocomplete-items="filteredTagOptions"
+                        @tags-changed="newTags => tags = newTags">
+                    </vue-tags-input>
+                </no-ssr>
+            </div>
+        </div> 
 
     </form>
 </template>
@@ -35,8 +49,22 @@
         name: 'request-document',
         data() {
             return {
-                needed_by: new Date(),    
+                needed_by: new Date(),
+                tag: '',
+                tags: [],
+                autocompleteItems: [
+                    {text: 'Urgent'},
+                    {text: 'Important'},
+                ],
             }    
-        }
+        },
+        computed: {
+            filteredTagOptions() {
+                return this.autocompleteItems.filter(i => new RegExp(this.tag, 'i').test(i.text));
+            },
+        },
     }
 </script>
+
+<style scoped>
+</style>

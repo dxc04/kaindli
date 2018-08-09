@@ -49,7 +49,7 @@ module.exports = {
           '_': 'lodash'
         })
     ],
-    vendor: ['vue-datepicker-local']
+    vendor: ['vue-datepicker-local', '@johmun/vue-tags-input']
   },
   css: [
       '@vuikit/theme/dist/vuikit.min.css',
@@ -61,6 +61,7 @@ module.exports = {
   plugins: [
       {src: '~plugins/vuikit.js', ssr: true},
       {src: '~plugins/datepicker.js', ssr: false},
+      {src: '~/plugins/vue-tags-input', ssr: false},
       '~/plugins/mixins'
   ]
 }
