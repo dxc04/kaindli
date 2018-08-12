@@ -1,8 +1,8 @@
 <template>
 
-    <vk-grid id="app-grid">
-        <div class="layout-sidebar uk-visible@m" uk-height-viewport="expand: true">
-            <div class="title-heading uk-text-center"><nuxt-link to="/">emquest</nuxt-link></div>
+    <vk-grid gutter="collapse">
+        <div class="layout-sidebar uk-visible@m">
+            <div class="title-heading uk-text-center uk-padding"><nuxt-link to="/">emquest</nuxt-link></div>
             <vk-nav class="uk-align-left main-nav uk-width-1-1">
                 <vk-nav-item href="#" class="uk-width-auto" icon="album" title="REQUESTS"></vk-nav-item>
                 <vk-nav-item href="#" icon="users" title="EMPLOYEES"></vk-nav-item>
@@ -34,7 +34,6 @@
             </vk-navbar>
 
             <nuxt/>
-
         </div>
     </vk-grid>
     

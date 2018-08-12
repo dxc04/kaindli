@@ -1,16 +1,16 @@
 <template>
 
-    <div>
-        <h1>{{ formTitle }}</h1>
-        <p>
-            <RequestDocument v-if="category == 'document'" />
-            <RequestEquipment v-else-if="category == 'equipment'" />
-            <RequestLoan v-else-if="category == 'credit'" />
-            <RequestLeave v-else-if="category == 'leave'" />
-        </p>
+  <div :show.sync="show_new_request_form">
+    <h1>{{ formTitle }}</h1>
+    <p>
+        <RequestDocument v-if="category == 'document'" />
+        <RequestEquipment v-else-if="category == 'equipment'" />
+        <RequestLoan v-else-if="category == 'credit'" />
+        <RequestLeave v-else-if="category == 'leave'" />
+    </p>
         <vk-button class="uk-margin-small-right" @click="$emit('close-form')">Cancel</vk-button>
         <vk-button type="primary">Save</vk-button>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -27,7 +27,7 @@ export default {
         RequestCredit,  
         RequestLeave,  
     },
-    props: ['category'],
+    props: ['category', 'show_new_request_form'],
     computed: {
         formTitle: function() {
             return  _.startCase(this.category) + ' Request'
