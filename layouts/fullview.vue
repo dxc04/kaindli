@@ -9,8 +9,11 @@
 </template>
 
 <style>
-    .fullview {
-        margin-top: 25vh;
+    .middleview {
+        margin-top: 20vh;
+    }
+    .topview {
+        margin-top: 10vh;
     }
 </style>
 

@@ -28,11 +28,19 @@
         </div> 
 
         <div class="uk-margin">
+            <div class="uk-form-label">Notes</div>
+            <div class="uk-form-controls">
+                <textarea class="uk-textarea uk-form-width-large" rows="5" columns="3"></textarea>
+            </div>
+        </div> 
+
+        <div class="uk-margin">
+            <div class="uk-form-label">Mark request as</div>
             <div class="uk-form-controls">
                 <no-ssr>
                     <vue-tags-input
                         v-model="tag"
-                        placeholder="Mark request as..."
+                        placeholder="Add tag"
                         :tags="tags"
                         :autocomplete-items="filteredTagOptions"
                         @tags-changed="newTags => tags = newTags">

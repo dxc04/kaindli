@@ -11,7 +11,7 @@
 
 .title-heading a {
     font-size: 24px !important;
-    color: hsl(141, 71%, 48%) !important;
+    color: #99d85f !important;
     text-decoration: none !important;
 }
 
@@ -46,6 +46,9 @@
 }
 /* End Transition*/
 
+a.add-button {
+    color: #666 !important;
+}
 
 .show-add-modal:hover, div#add-new-request div:hover, div#add-new-request div .uk-icon:hover, 
 ul.main-nav li a:hover, ul.main-nav li.uk-active span {
@@ -195,7 +198,7 @@ ul.main-nav li:hover {
 }
 
 .request-details {
-    margin-left: -10px !important;
+    margin-left: -12px !important;
 }
 
 .request-detail-label {
@@ -204,10 +207,6 @@ ul.main-nav li:hover {
 
 .request-detail {
     font-size: 9px !important;
-}
-
-#user-name-abbr {
-    margin-left: 5px !important;
 }
 
 #new-request-placeholder {

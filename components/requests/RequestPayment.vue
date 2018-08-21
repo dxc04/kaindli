@@ -2,24 +2,26 @@
     <form class="uk-form-stacked">
 
         <div class="uk-margin">
-            <label class="uk-form-label" for="">Request for</label>
+            <label class="uk-form-label" for="">Payment Request for </label>
             <div class="uk-form-controls">
                 <select class="uk-select uk-form-width-large" id="">
-                    <option>Cash Advance</option>
-                    <option>Loan</option>
+                    <option>Work Rendered</option>
+                    <option>Reimbursement</option>
                 </select>
             </div>
         </div>
 
         <div class="uk-margin">
-            <label class="uk-form-label" for="">Payment Terms</label>
+            <label class="uk-form-label" for="">On</label>
             <div class="uk-form-controls">
-                <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-                    <label><input class="uk-radio" type="radio" name="payment_terms" checked> Yearly</label>
-                    <label><input class="uk-radio" type="radio" name="payment_terms"> Semi-Annually</label>
-                    <label><input class="uk-radio" type="radio" name="payment_terms"> Quarterly</label>
-                    <label><input class="uk-radio" type="radio" name="payment_terms"> Specified Date</label>
-                </div>
+                 <input class="uk-input uk-form-width-large" type="text">
+            </div>
+        </div>
+
+        <div class="uk-margin">
+            <label class="uk-form-label" for="">Receipt, Timesheet, Invoice...</label>
+            <div class="uk-form-controls">
+                 <input class="uk-input uk-form-width-large" type="text">
             </div>
         </div>
 
@@ -58,23 +60,6 @@
 </template>
 
 <script>
-    export default {
-        name: 'request-document',
-        data() {
-            return {
-                needed_by: new Date(),
-                tag: '',
-                tags: [],
-                autocompleteItems: [
-                    {text: 'Urgent'},
-                    {text: 'Important'},
-                ],
-            }    
-        },
-        computed: {
-            filteredTagOptions() {
-                return this.autocompleteItems.filter(i => new RegExp(this.tag, 'i').test(i.text));
-            },
-        },
-    }
+export default {
+}
 </script>

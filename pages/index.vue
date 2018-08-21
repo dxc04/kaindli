@@ -1,12 +1,12 @@
 <template>
-  <section class="container uk-margin@s">
+  <section class="container uk-padding-remove-top">
       <vk-grid gutter="medium" v-vk-height-match="{ target: '> div > .uk-card' }" class="uk-child-width-1-2@s uk-child-width-1-2@m uk-child-width-1-4@l">
           <RequestCard v-for="(item, index) in requests" :key="index" :item=item />
       </vk-grid>
 
 
       <div class="uk-position-bottom-right uk-padding-small">
-          <nuxt-link to="/new-request"><vk-icon icon="plus-circle" ratio="2" class="show-add-modal"></vk-icon></nuxt-link>
+          <nuxt-link to="/new-request" class="add-button"><vk-icon icon="plus-circle" ratio="2" class="show-add-modal"></vk-icon></nuxt-link>
       </div>
 
   </section>

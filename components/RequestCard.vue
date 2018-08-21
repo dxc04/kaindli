@@ -22,7 +22,7 @@
                         <div class="uk-width-1-5">
                             <vk-icon icon="future"></vk-icon>
                         </div>
-                        <div class="uk-width-auto uk-padding-remove-bottom">
+                        <div class="request-details uk-width-auto uk-padding-remove-bottom">
                             <p class="uk-text-muted uk-text-uppercase uk-margin-remove-bottom request-detail-label">Due Date</p>
                             <p class="uk-margin-remove-top request-detail"><time>{{ item.due_at }}</time></p>
                         </div>
@@ -33,7 +33,7 @@
                         <div class="uk-width-1-5">
                             <vk-icon icon="refresh"></vk-icon>
                         </div>
-                        <div class="uk-width-auto uk-padding-remove-bottom">
+                        <div class="request-details uk-width-auto uk-padding-remove-bottom">
                             <p class="uk-text-muted uk-text-uppercase uk-margin-remove-bottom request-detail-label">Status</p>
                             <p class="uk-margin-remove-top request-detail uk-text-success">{{ item.status }}</p>
                         </div>
