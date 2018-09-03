@@ -1,7 +1,7 @@
 <template>
   <section class="container uk-padding-remove-top">
       <vk-grid gutter="medium" v-vk-height-match="{ target: '> div > .uk-card' }" class="uk-child-width-1-2@s uk-child-width-1-2@m uk-child-width-1-4@l">
-          <RequestCard v-for="(item, index) in requests" :key="index" :item=item />
+          <RequestCard v-for="(item, index) in list" :key="index" :item=item />
       </vk-grid>
 
 
@@ -19,12 +19,18 @@
 </style>
 
 <script>
+
+import {mapState} from 'vuex';
 import RequestCard from '~/components/RequestCard.vue'
+
 
 export default {
     layout: 'default',
     components: {
         RequestCard,
+    },
+    async fetch({store}) {
+      await store.dispatch('requests/get')
     },
     data () {
         return {
@@ -68,6 +74,13 @@ export default {
             ],
             show_add_modal: false,
         };
+    },
+    computed: {
+      ...mapState({
+        list: state => {
+          return state.requests.list
+        }
+      })
     },
     methods: {
         showAddModal () {

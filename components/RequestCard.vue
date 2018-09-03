@@ -1,10 +1,10 @@
 <template>
     <div>
     <vk-card class="request">
-        <div :class="['uk-card-badge', 'uk-label', 'request-type-badge', item.request_type + '-type']">{{ item.request_type }}</div>
+        <div :class="['uk-card-badge', 'uk-label', 'request-type-badge', kebabCase + '-type']">{{ item.category }}</div>
         <div class="uk-margin-top request-main-info">
             <p class="uk-card-title uk-margin-remove-bottom request-title">{{ item.title  }}</p>
-            <p class="uk-text-meta uk-margin-remove-top requested-at"><time>{{ item.created_at }}</time></p>
+            <p class="uk-text-meta uk-margin-remove-top requested-at"><time>{{ item.createdAt }}</time></p>
 
             <vk-grid gutter="collapse" class="uk-child-width-expand">
                 <div class="uk-width-1-4">
@@ -24,7 +24,7 @@
                         </div>
                         <div class="request-details uk-width-auto uk-padding-remove-bottom">
                             <p class="uk-text-muted uk-text-uppercase uk-margin-remove-bottom request-detail-label">Due Date</p>
-                            <p class="uk-margin-remove-top request-detail"><time>{{ item.due_at }}</time></p>
+                            <p class="uk-margin-remove-top request-detail"><time>{{ neededBy }}</time></p>
                         </div>
                     </vk-grid>
                 </div>
@@ -47,6 +47,9 @@
 
 <script>
 
+import moment from 'moment';
+import kebab_case from 'voca/kebab_case';
+
 export default {
     name: 'RequestCard',
     props: {
@@ -57,11 +60,17 @@ export default {
     },
     computed: {
         abbreviate: function() {
-           return this.item.requestor.match(/\b\w/g).join(''); 
-        }
+           return this.item.requestor.first_name.charAt() + this.item.requestor.last_name.charAt();
+       },
+       neededBy: function() {
+           return moment(this.item.needed_by).format("MM-DD-YYYY");
+       },
+       kebabCase: function() {
+           return kebab_case(this.item.category);
+       }
     }
 
-} 
+}
 </script>
 
 <style>

@@ -2,14 +2,13 @@
     <div>
         <h1 class="title-heading">{{ formTitle }}</h1>
         <p>
-            <RequestDocument v-if="category == 'document'" />
+            <RequestDocument v-on:close-form="$emit('close-form')" v-if="category == 'document'" />
             <RequestEquipment v-else-if="category == 'equipment'" />
             <RequestCredit v-else-if="category == 'credit'" />
             <RequestLeave v-else-if="category == 'leave'" />
             <RequestPayment v-else-if="category == 'payment'" />
         </p>
-        <vk-button class="uk-margin-small-right" @click="$emit('close-form')">Cancel</vk-button>
-        <vk-button type="primary">Save</vk-button>
+
     </div>
 </template>
 
@@ -23,10 +22,10 @@ import RequestPayment from '~/components/requests/RequestPayment.vue'
 export default {
     name: 'request-form',
     components: {
-        RequestDocument,  
-        RequestEquipment,  
-        RequestCredit,  
-        RequestLeave,  
+        RequestDocument,
+        RequestEquipment,
+        RequestCredit,
+        RequestLeave,
         RequestPayment
     },
     props: ['category'],
@@ -36,6 +35,10 @@ export default {
         },
     },
     methods: {
+        closeForm () {
+           this.show_add_modal = false
+        },
     }
+
 }
 </script>

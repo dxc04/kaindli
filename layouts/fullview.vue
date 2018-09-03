@@ -5,7 +5,7 @@
             <nuxt/>
         </div>
     </vk-grid>
-    
+
 </template>
 
 <style>
@@ -16,4 +16,3 @@
         margin-top: 10vh;
     }
 </style>
-
