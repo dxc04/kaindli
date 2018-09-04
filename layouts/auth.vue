@@ -1,14 +1,14 @@
 <template>
-<div class="wrapper fadeInDown">
-  <nuxt />
-</div>
+    <div class="main-wrapper">
+      <nuxt />
+    </div>
 </template>
 
-<style media="screen" scoped>
+<style>
 
 /* BASIC */
 
-html {
+main-wrapper {
   background: linear-gradient(-160deg, rgba(255, 235, 59, 0.18039), #2bb575);
   height: 100vh;
 }
