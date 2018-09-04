@@ -26,6 +26,7 @@ import RequestCard from '~/components/RequestCard.vue'
 
 export default {
     layout: 'default',
+    middleware: 'auth',
     components: {
         RequestCard,
     },

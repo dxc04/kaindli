@@ -15,7 +15,7 @@
                 <div class="wave -three"></div>
                 <div class="uk-width-auto user-info">
                     <img class="uk-border-circle" width="90" height="90" src="~/assets/images/employees/dixie.jpg">
-                     <h4 class="uk-card-title uk-margin-remove-bottom">Dixie Atay</h4>
+                     <h4 class="uk-card-title uk-margin-remove-bottom">{{ fullName }}</h4>
                 <p class="uk-text-meta uk-margin-remove-top">Web Developer</p>
                 </div>
             </div>
@@ -38,3 +38,21 @@
     </vk-grid>
     
 </template>
+
+<script>
+import { mapGetters } from 'vuex'
+
+export default {
+    computed: {
+        ...mapGetters(['isAuthenticated', 'authUser']),
+        fullName() {
+            return this.authUser.first_name + ' ' + this.authUser.last_name
+        }
+    },
+    methods: {
+        async logout() {
+            await this.$auth.logout()
+        }
+    }
+}
+</script>
