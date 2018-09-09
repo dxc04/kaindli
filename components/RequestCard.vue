@@ -63,7 +63,7 @@ export default {
            return this.item.requestor.first_name.charAt() + this.item.requestor.last_name.charAt();
        },
        neededBy: function() {
-           return moment(this.item.needed_by).format("MM-DD-YYYY");
+           return moment(this.item.needed_by).format("MM/DD/YYYY");
        },
        kebabCase: function() {
            return kebab_case(this.item.category);

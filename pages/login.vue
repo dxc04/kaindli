@@ -55,15 +55,12 @@ export default {
     methods: {
       async login() {
         try {
-        //    const response = await this.$strapi.login(this.email, this.password)
-        //    console.log(response);
           await this.$auth.loginWith('local', {
             data: {
               identifier: this.email,
               password: this.password
             }
           })
-          console.log(this.$auth.user)
           this.$router.push('/')
         } catch (e) {
             console.log(e);
