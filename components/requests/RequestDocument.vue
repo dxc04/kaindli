@@ -81,15 +81,18 @@ export default {
     },
     computed: {
         filteredTagOptions() {
-            return this.autocompleteItems.filter(i => new RegExp(this.tag, 'i').test(i.text));
+            return this.autocompleteItems.filter(i => new RegExp(this.tag, 'i').test(i.text))
         },
     },
     methods: {
         handleSubmit() {
-            this.request.title = this.request.fields.document;
-            this.request.tags = this.tags;
+            this.request.title = this.request.fields.document
+            this.request.tags = this.tags
+            this.request.requestor = this.$auth.user
 
             this.$store.dispatch('requests/create', this.request)
+            this.$toast.success('You have successfully added a request.')
+            this.$router.push('/')
         }
     }
 }

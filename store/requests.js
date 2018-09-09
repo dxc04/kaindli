@@ -51,7 +51,7 @@ export const actions = {
     await commit('add', request)
   },
   create({commit}, params) {
-    return this.$axios.post(`/request`, {request: params})
+    return this.$axios.post(`/request`, params)
   },
   update({commit}, params) {
     return this.$axios.put(`/request/${params.id}`, {request: params})
