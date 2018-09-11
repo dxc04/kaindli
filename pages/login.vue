@@ -42,8 +42,8 @@ export default {
     transition: 'slide-right',
     data() {
       return {
-        email: '',
-        password: '',
+        email: 'emquest@emquest.test',
+        password: 'emquest',
         error: null
       }
     },
