@@ -6,28 +6,6 @@ export const state = () => ({
     request: {},
 });
 
-export const getters = {
-    tag_options: (state, getters) => {
-        return {
-            tag: '',
-            autocompleteItems: [
-                {text: 'Urgent'},
-                {text: 'Important'},
-            ],
-        }
-    },
-    request_defaults: (state, getters) => {
-        return {
-            title: '',
-            category: '',
-            needed_by: new Date(),
-            fields: {},
-            notes: '',
-            tags: []
-        }
-    }
-}
-
 export const mutations = {
   set(state, requests) {
     state.list = requests

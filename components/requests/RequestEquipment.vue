@@ -54,34 +54,23 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex';
+    import requestMixin from '~/mixins/request-form-mixin.js'
 
-export default {
-    name: 'request-equipment',
-    data () {
-        return {
-            category: 'Equipment',
-        }
-    },
-    computed: {
-        ...mapGetters({
-            request: 'requests/request_defaults',
-            tag_options: 'requests/tag_options'
-        }),
-        filteredTagOptions() {
-            return this.tag_options.autocompleteItems.filter(i => new RegExp(this.tag_options.tag, 'i').test(i.text))
+    export default {
+        name: 'request-equipment',
+        mixins: [requestMixin],
+        data () {
+            return {
+                category: 'Equipment',
+            }
         },
-    },
-    methods: {
-        handleSubmit() {
-            this.request.category = this.category
-            this.request.title = this.request.fields.request_for + ' ' + this.request.fields.equipment
-            this.request.requestor = this.$auth.user
+        methods: {
+            handleSubmit() {
+                this.request.category = this.category
+                this.request.title = this.request.fields.request_for + ' ' + this.request.fields.equipment
 
-            this.$store.dispatch('requests/create', this.request)
-            this.$toast.success('You have successfully added a new request.')
-            this.$router.push('/')
+                this.formSubmit()
+            }
         }
     }
-}
 </script>

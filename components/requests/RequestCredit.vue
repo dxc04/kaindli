@@ -1,24 +1,24 @@
 <template>
-    <form class="uk-form-stacked">
+    <form class="uk-form-stacked" @submit.prevent="handleSubmit">
 
         <div class="uk-margin">
-            <label class="uk-form-label" for="">Request for</label>
+            <label class="uk-form-label">Request for</label>
             <div class="uk-form-controls">
-                <select class="uk-select uk-form-width-large" id="">
+                <select class="uk-select uk-form-width-large" v-model="request.fields.request_for">
                     <option>Cash Advance</option>
                     <option>Loan</option>
                 </select>
             </div>
         </div>
 
-        <div class="uk-margin">
-            <label class="uk-form-label" for="">Payment Terms</label>
+        <div class="uk-margin" v-if="request.fields.request_for == 'Loan'">
+            <label class="uk-form-label">Payment Terms</label>
             <div class="uk-form-controls">
                 <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-                    <label><input class="uk-radio" type="radio" name="payment_terms" checked> Yearly</label>
-                    <label><input class="uk-radio" type="radio" name="payment_terms"> Semi-Annually</label>
-                    <label><input class="uk-radio" type="radio" name="payment_terms"> Quarterly</label>
-                    <label><input class="uk-radio" type="radio" name="payment_terms"> Specified Date</label>
+                    <label><input class="uk-radio" type="radio" name="payment_terms" v-model="request.fields.payment_terms"> Yearly</label>
+                    <label><input class="uk-radio" type="radio" name="payment_terms" v-model="request.fields.payment_terms"> Semi-Annually</label>
+                    <label><input class="uk-radio" type="radio" name="payment_terms" v-model="request.fields.payment_terms"> Quarterly</label>
+                    <label><input class="uk-radio" type="radio" name="payment_terms" v-model="request.fields.payment_terms" > Specified Date</label>
                 </div>
             </div>
         </div>
@@ -27,7 +27,7 @@
             <div class="uk-form-label">Needed by</div>
             <div class="uk-form-controls">
                 <no-ssr>
-                    <vue-datepicker-local v-model="needed_by" :local="localDatepicker"></vue-datepicker-local>
+                    <vue-datepicker-local v-model="request.needed_by" :local="localDatepicker"></vue-datepicker-local>
                 </no-ssr>
             </div>
         </div> 
@@ -35,7 +35,7 @@
         <div class="uk-margin">
             <div class="uk-form-label">Notes</div>
             <div class="uk-form-controls">
-                <textarea class="uk-textarea uk-form-width-large" rows="5" columns="3"></textarea>
+                <textarea class="uk-textarea uk-form-width-large" rows="5" columns="3" v-model="request.notes"></textarea>
             </div>
         </div> 
 
@@ -44,37 +44,38 @@
             <div class="uk-form-controls">
                 <no-ssr>
                     <vue-tags-input
-                        v-model="tag"
+                        v-model="tag_options.tag"
                         placeholder="Add tag"
-                        :tags="tags"
+                        :tags="request.tags"
                         :autocomplete-items="filteredTagOptions"
                         @tags-changed="newTags => tags = newTags">
                     </vue-tags-input>
                 </no-ssr>
             </div>
-        </div> 
-
+        </div>
+        <vk-button class="uk-margin-small-right" @click="$emit('close-form')">Cancel</vk-button>
+        <button class="uk-button uk-button-primary" type="submit">Save</button>
     </form>
 </template>
 
 <script>
+    import requestMixin from '~/mixins/request-form-mixin.js'
+
     export default {
-        name: 'request-document',
+        name: 'request-credit',
+        mixins: [requestMixin],
         data() {
             return {
-                needed_by: new Date(),
-                tag: '',
-                tags: [],
-                autocompleteItems: [
-                    {text: 'Urgent'},
-                    {text: 'Important'},
-                ],
+                category: 'Credit',
             }    
         },
-        computed: {
-            filteredTagOptions() {
-                return this.autocompleteItems.filter(i => new RegExp(this.tag, 'i').test(i.text));
-            },
-        },
+        methods: {
+            handleSubmit() {
+                this.request.category = this.category
+                this.request.title = this.request.fields.request_for
+
+                this.formSubmit()
+            }
+        }
     }
 </script>

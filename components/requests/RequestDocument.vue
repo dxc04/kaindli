@@ -4,7 +4,7 @@
         <div class="uk-margin">
             <label class="uk-form-label" for="document-request">Request for</label>
             <div class="uk-form-controls">
-                <select class="uk-select uk-form-width-large" id="document-request" v-model="request.fields.document">
+                <select class="uk-select uk-form-width-large" id="document-request" v-model="request.fields.request_for">
                     <option>Certificate of Employment</option>
                     <option>Payslip</option>
                 </select>
@@ -56,33 +56,16 @@
 
 <script>
 
-import { mapGetters } from 'vuex'
+import requestMixin from '~/mixins/request-form-mixin.js'
 
 export default {
     name: 'request-document',
-    data () {
-        return {
-            category: 'Document',
-        }
-    },
-    computed: {
-        ...mapGetters({
-            request: 'requests/request_defaults',
-            tag_options: 'requests/tag_options'
-        }),
-        filteredTagOptions() {
-            return this.tag_options.autocompleteItems.filter(i => new RegExp(this.tag_options.tag, 'i').test(i.text))
-        },
-    },
+    mixins: [requestMixin],
     methods: {
         handleSubmit() {
-            this.request.category = this.category
             this.request.title = this.request.fields.document
-            this.request.requestor = this.$auth.user
 
-            this.$store.dispatch('requests/create', this.request)
-            this.$toast.success('You have successfully added a request.')
-            this.$router.push('/')
+            this.formSubmit()
         }
     }
 }
