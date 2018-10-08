@@ -39,9 +39,9 @@
             <div class="uk-form-controls">
                 <no-ssr>
                     <vue-tags-input
-                        v-model="tag"
+                        v-model="tag_options.tag"
                         placeholder="Add tag"
-                        :tags="tags"
+                        :tags="request.tags"
                         :autocomplete-items="filteredTagOptions"
                         @tags-changed="newTags => tags = newTags">
                     </vue-tags-input>
@@ -56,38 +56,28 @@
 
 <script>
 
+import { mapGetters } from 'vuex'
+
 export default {
     name: 'request-document',
-    data() {
+    data () {
         return {
-            tag: '',
-            tags: [],
-            autocompleteItems: [
-                {text: 'Urgent'},
-                {text: 'Important'},
-            ],
-            request: {
-                title: '',
-                category: 'Document',
-                needed_by: new Date(),
-                fields: {
-                    document: '',
-                    number_of_copies: 1
-                },
-                notes: '',
-                tags: []
-            }
+            category: 'Document',
         }
     },
     computed: {
+        ...mapGetters({
+            request: 'requests/request_defaults',
+            tag_options: 'requests/tag_options'
+        }),
         filteredTagOptions() {
-            return this.autocompleteItems.filter(i => new RegExp(this.tag, 'i').test(i.text))
+            return this.tag_options.autocompleteItems.filter(i => new RegExp(this.tag_options.tag, 'i').test(i.text))
         },
     },
     methods: {
         handleSubmit() {
+            this.request.category = this.category
             this.request.title = this.request.fields.document
-            this.request.tags = this.tags
             this.request.requestor = this.$auth.user
 
             this.$store.dispatch('requests/create', this.request)
