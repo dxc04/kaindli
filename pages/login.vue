@@ -1,39 +1,24 @@
 <template>
-    <div class="wrapper fadeInDown">
-        <div id="formContent">
-
-          <!-- Icon -->
-          <div class="fadeIn first uk-padding">
-            <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
-          </div>
-
-          <!-- Login Form -->
-          <div class="auth-form">
-              <form method="post" @submit.prevent="login">
-                <input
-                      type="email"
-                      name="email"
-                      v-model="email"
-                      class="fadeIn second"
-                      placeholder="email"
-                >
-                <input
-                      type="password"
-                      name="password"
-                      v-model="password"
-                      class="fadeIn third"
-                      placeholder="password">
-                <input type="submit" class="fadeIn fourth" value="Log In">
-            </form>
-          </div>
-
-          <!-- Remind Passowrd -->
-          <div id="formFooter">
-            <a class="underlineHover" href="#">Forgot Password?</a>
-          </div>
-
-        </div>
+  <div class="login">
+    <div class="login_inner">
+      <div class="login_inner__avatar"></div>
+      <form method="post" @submit.prevent="login">
+        <input id="email"
+               placeholder="Give us a username or your email"
+               type="email"
+               name="email"
+               v-model="email"
+        >
+        <input id="password"
+               placeholder="Provide a password"
+               type="password"
+               name="password"
+               v-model="password"
+        >
+        <input value="Let's Start" type="submit">
+      </form>
     </div>
+  </div>
 </template>
 
 <script>
@@ -42,8 +27,8 @@ export default {
     transition: 'slide-right',
     data() {
       return {
-        email: '',
-        password: '',
+        email: 'emquest@emquest.test',
+        password: 'emquest',
         error: null
       }
     },
@@ -55,15 +40,12 @@ export default {
     methods: {
       async login() {
         try {
-        //    const response = await this.$strapi.login(this.email, this.password)
-        //    console.log(response);
           await this.$auth.loginWith('local', {
             data: {
               identifier: this.email,
               password: this.password
             }
           })
-          console.log(this.$auth.user)
           this.$router.push('/')
         } catch (e) {
             console.log(e);
@@ -73,3 +55,128 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+  $c-bg-color: #2B2D42;
+  $c-btn-color: #9AD189;
+  $radius: 4px;
+
+  * {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .login {
+    background: $c-bg-color;
+    border-radius: $radius;
+    width: 300px;
+    height: auto;
+    &_inner {
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+      &__avatar {
+        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/217538/default-avatar-ponsy-deer.png);
+        background-size: cover;
+        border: 3px solid #EDF2F4;
+        width: 4em;
+        height: 4em;
+        margin: 0 auto;
+        transform: translateY(-35px);
+        border-radius: 100%;
+      }
+      &__check {
+        border: 1px dashed #FFF;
+        border-radius: 100%;
+        width: 4em;
+        height: 4em;
+        position: absolute;
+        margin: -185px 120px;
+        opacity: 0;
+        text-align: center;
+        &--complete {
+          i {
+            line-height: 4em;
+            color: #FFF;
+            opacity: 0;
+          }
+        }
+      }
+      input {
+        appearance: none;
+        background: none;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-bottom: 1px solid lighten($c-bg-color, 4%);
+        width: 100%;
+        padding: 1.1em;
+        color: #FFF;
+        outline: none;
+        font-size: 0.9em;
+        text-align: left;
+        &:last-of-type {
+          border-bottom: none;
+        }
+        &[type="submit"] {
+          background: $c-btn-color;;
+          cursor: pointer;
+          border-bottom-left-radius: $radius - 2;
+          border-bottom-right-radius: $radius - 2;
+          text-align: center;
+          margin: 3em auto 0 auto;
+        }
+      }
+    }
+  }
+
+  .loggedin {
+    background: $c-bg-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    h2 {
+      opacity: 0;
+      color: #FFF;
+      text-align: center;
+      font-size: 1.7em;
+    }
+  }
+
+  ::-webkit-input-placeholder {
+    color: #FFF;
+  }
+
+  :-moz-placeholder {
+    color: #FFF;
+  }
+
+  ::-moz-placeholder {
+    color: #FFF;
+  }
+
+  :-ms-input-placeholder {
+    color: #FFF;
+  }
+
+  ::-ms-input-placeholder {
+    color: #FFF;
+  }
+
+  .hide {
+    opacity: 0;
+  }
+
+  .show {
+    opacity: 1;
+  }
+
+  @keyframes spinner {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>

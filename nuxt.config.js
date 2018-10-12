@@ -86,7 +86,8 @@ module.exports = {
   ],
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
+    '@nuxtjs/toast',
   ],
   axios: {
     /* set API_URL environment variable to configure access to the API
@@ -116,6 +117,10 @@ module.exports = {
         }
       }
     }
+  },
+  toast: {
+    position: 'top-right',
+    duration: 5000
   }
 
 }

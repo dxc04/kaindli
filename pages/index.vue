@@ -35,44 +35,6 @@ export default {
     },
     data () {
         return {
-            requests: [
-                {
-                    request_type: 'document',
-                    title: 'Certificate of Employment',
-                    context: '',
-                    created_at: 'July 04, 2018',
-                    requestor: 'Dixie Atay',
-                    due_at: 'July 28, 2018',
-                    status: 'In Progress'
-                },
-                {
-                    request_type: 'equipment',
-                    title: 'Keyboard',
-                    context: '',
-                    created_at: 'July 04, 2018',
-                    requestor: 'Dixie Atay',
-                    due_at: 'July 28, 2018',
-                    status: 'In Progress'
-                },
-                {
-                    request_type: 'credit',
-                    title: 'Cash Advance',
-                    context: '',
-                    created_at: 'July 04, 2018',
-                    requestor: 'Dixie Atay',
-                    due_at: 'July 28, 2018',
-                    status: 'Open'
-                },
-                {
-                    request_type: 'credit',
-                    title: 'Cash Advance',
-                    context: '',
-                    created_at: 'July 04, 2018',
-                    requestor: 'Dixie Atay',
-                    due_at: 'July 28, 2018',
-                    status: 'Open'
-                },
-            ],
             show_add_modal: false,
         };
     },

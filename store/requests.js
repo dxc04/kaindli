@@ -2,16 +2,38 @@ import merge from "lodash.merge";
 import assign from 'lodash.assign';
 
 export const state = () => ({
-  list: [],
-  request: {},
+    list: [],
+    request: {},
 });
 
+export const getters = {
+    tag_options: (state, getters) => {
+        return {
+            tag: '',
+            autocompleteItems: [
+                {text: 'Urgent'},
+                {text: 'Important'},
+            ],
+        }
+    },
+    request_defaults: (state, getters) => {
+        return {
+            title: '',
+            category: '',
+            needed_by: new Date(),
+            fields: {},
+            notes: '',
+            tags: []
+        }
+    }
+}
+
 export const mutations = {
-  set(state, request) {
-    state.list = request
+  set(state, requests) {
+    state.list = requests
   },
-  add(state, value) {
-    merge(state.list, value)
+  add(state, item) {
+    state.list.push(item)
   },
   remove(state, {request}) {
     state.list.filter(c => request.id !== c.id)
@@ -50,8 +72,11 @@ export const actions = {
   async add({commit}, request) {
     await commit('add', request)
   },
-  create({commit}, params) {
-    return this.$axios.post(`/request`, {request: params})
+  create({commit, dispatch, state}, params) {
+      this.$axios.post(`/request`, params)
+        .then((response) => {
+            dispatch('add', response.data)
+        })
   },
   update({commit}, params) {
     return this.$axios.put(`/request/${params.id}`, {request: params})

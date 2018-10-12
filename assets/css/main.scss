@@ -50,7 +50,7 @@ a.add-button {
     color: #666 !important;
 }
 
-.show-add-modal:hover, div#add-new-request div:hover, div#add-new-request div .uk-icon:hover, 
+.show-add-modal:hover, div#add-new-request div:hover, .uk-icon:hover, 
 ul.main-nav li a:hover, ul.main-nav li.uk-active span {
     color: #7fd673 !important;
     cursor: pointer;
@@ -117,12 +117,33 @@ ul.main-nav li:hover {
 }
 
 .user-info {
-  position: relative;
-  top: 70px;
-  width: 100%;
-  z-index: 1;
-  text-align: center;
-  transform: translate3d(0, 0, 0);
+    position: relative;
+    top: 45px;
+    width: 100%;
+    z-index: 1;
+    transform: translate3d(0, 0, 0);
+    padding: 10px;
+}
+
+.main-user-info {
+    text-align: center;
+}
+
+.other-user-info {
+    margin-left: 30px;
+    font-size: 12px;
+}
+
+.user-info-picture {
+    margin-left: 10px !important;
+}
+
+.user-info-fullname {
+    margin-top: 10px !important;
+    font-size: 18px !important;
+}
+.info-val {
+    margin-top: 4px !important;
 }
 @keyframes drift {
   from { transform: rotate(0deg); }
