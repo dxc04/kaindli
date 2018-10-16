@@ -60,16 +60,21 @@ export default {
                     label: 'Credit',
                     icon: 'credit-card'
                 },
- //               {
- //                   type: 'leave',
- //                   label: 'Leave',
- //                   icon: 'calendar'
- //               },
+               // {
+               //     type: 'leave',
+               //     label: 'Leave',
+               //     icon: 'calendar'
+               // },
                 {
                     type: 'payment',
                     label: 'Payment',
                     icon: 'tag'
                 },
+                // {
+                //     type: 'other',
+                //     label: 'Other',
+                //     icon: 'tag'
+                // },
             ]
         }
     },
