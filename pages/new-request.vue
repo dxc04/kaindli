@@ -18,7 +18,7 @@
                 </div>
             </vk-grid>
         </div>
-        
+
         <div v-if="show_new_request_form" class="topview">
             <RequestForm :category="new_request" v-on:close-form="closeForm"/>
             <div class="uk-position-top-right uk-padding-small">
@@ -35,6 +35,7 @@
 import RequestForm from '~/components/RequestForm.vue'
 
 export default {
+    middleware: 'auth',
     components: {
         RequestForm
     },
@@ -86,7 +87,7 @@ export default {
             this.new_request = new_request
         },
         closeForm () {
-           this.show_add_modal = false
+
         },
         backToCreateRequest() {
             this.show_new_request_form = false

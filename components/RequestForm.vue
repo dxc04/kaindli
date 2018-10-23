@@ -2,7 +2,7 @@
     <div>
         <h1 class="title-heading">{{ formTitle }}</h1>
         <p>
-            <RequestDocument v-on:close-form="$emit('close-form')" v-if="category == 'document'" />
+            <RequestDocument v-if="category == 'document'" />
             <RequestEquipment v-else-if="category == 'equipment'" />
             <RequestCredit v-else-if="category == 'credit'" />
             <RequestLeave v-else-if="category == 'leave'" />

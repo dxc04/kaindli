@@ -12,50 +12,44 @@
   </section>
 </template>
 
-<style>
-.content-container {
-    background: #f9f9f9 !important;
-}
-</style>
-
 <script>
+  import {mapState} from 'vuex';
+  import RequestCard from '~/components/RequestCard.vue'
 
-import {mapState} from 'vuex';
-import RequestCard from '~/components/RequestCard.vue'
-
-
-export default {
-    layout: 'default',
-    middleware: 'auth',
-    components: {
-        RequestCard,
-    },
-    async fetch({store}) {
-      await store.dispatch('requests/get')
-    },
-    data () {
-        return {
-            show_add_modal: false,
-        };
-    },
-    computed: {
-      ...mapState({
-        list: state => {
-          return state.requests.list
-        }
-      })
-    },
-    methods: {
-        showAddModal () {
-            this.show_add_modal = true
-        },
-        showNewRequestForm (new_request) {
-            this.show_new_request_form = true
-            this.new_request = new_request
-        },
-        closeForm () {
-           this.show_add_modal = false
-        },
-    }
-}
+  export default {
+      name: 'index',
+      layout: 'default',
+      middleware: 'auth',
+      components: {
+          RequestCard,
+      },
+      async fetch({store}) {
+        await store.dispatch('requests/get')
+      },
+      data () {
+          return {
+              show_add_modal: false,
+          };
+      },
+      computed: {
+        ...mapState({
+          list: state => {
+            return state.requests.list
+          }
+        })
+      },
+      methods: {
+          showAddModal () {
+              this.show_add_modal = true
+          },
+          showNewRequestForm (new_request) {
+              this.show_new_request_form = true
+              this.new_request = new_request
+          },
+          closeForm () {
+             this.show_add_modal = false
+          },
+      }
+  }
 </script>
+

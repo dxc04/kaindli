@@ -57,8 +57,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  $c-bg-color: #2B2D42;
-  $c-btn-color: #9AD189;
+  $c-bg-color: #fff; //#2B2D42;
+  $c-btn-color: #B3EFA1;
   $radius: 4px;
 
   * {
@@ -112,7 +112,7 @@ export default {
         border-bottom: 1px solid lighten($c-bg-color, 4%);
         width: 100%;
         padding: 1.1em;
-        color: #FFF;
+        color: #6F7B6E;
         outline: none;
         font-size: 0.9em;
         text-align: left;

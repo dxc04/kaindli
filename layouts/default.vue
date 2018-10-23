@@ -79,3 +79,9 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+  .content-container {
+    background: #f9f9f9 !important;
+  }
+</style>
