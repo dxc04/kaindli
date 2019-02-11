@@ -1,7 +1,7 @@
 {
-  "name": "emquest",
+  "name": "kaindli",
   "version": "1.0.0",
-  "description": "Employee Requests Portal",
+  "description": "Manages members'/employees' requests.",
   "author": "Dixie Philamerah Atay",
   "private": true,
   "config": {

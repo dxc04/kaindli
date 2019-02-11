@@ -1,34 +1,34 @@
 <template>
-<section class="container">
-    <div class="uk-container uk-width-1-2@l">
-        <div class="uk-position-top-left uk-padding-small">
-            <nuxt-link to="/" v-if="!show_new_request_form">
-                <vk-icon icon="chevron-left" href="#" ratio="1.5" class="uk-icon-button"></vk-icon>
-            </nuxt-link>
-            <vk-icon v-if="show_new_request_form" icon="chevron-left" href="#" ratio="1.5" class="uk-icon-button" @click="backToCreateRequest"></vk-icon>
-        </div>
-        <div v-if="!show_new_request_form" class="middleview">
-            <div class="uk-text-center uk-padding uk-padding-remove-top">
-                <h1 class="title-heading">Create Request</h1>
-            </div>
-            <vk-grid gutter="medium" id="add-new-request" class="uk-child-width-1-4@l uk-child-width-1-2@s uk-flex-center uk-text-center uk-text-uppercase">
-                <div v-for="(item, index) in request_types" :key="index" @click="showNewRequestForm(item.type)">
-                    <vk-icon :icon="item.icon" ratio="1.5"></vk-icon>
-                    <div>{{item.label}}</div>
-                </div>
-            </vk-grid>
-        </div>
-
-        <div v-if="show_new_request_form" class="topview">
-            <RequestForm :category="new_request" v-on:close-form="closeForm"/>
-            <div class="uk-position-top-right uk-padding-small">
-                <nuxt-link to="/">
-                    <vk-icon icon="close" href="#" ratio="1.5" class="uk-icon-button"></vk-icon>
+    <section class="container">
+        <div class="uk-container uk-width-1-2@l">
+            <div class="uk-position-top-left uk-padding-small">
+                <nuxt-link to="/" v-if="!show_new_request_form">
+                    <vk-icon icon="chevron-left" href="#" ratio="1.5" class="uk-icon-button"></vk-icon>
                 </nuxt-link>
+                <vk-icon v-if="show_new_request_form" icon="chevron-left" href="#" ratio="1.5" class="uk-icon-button" @click="backToCreateRequest"></vk-icon>
+            </div>
+            <div v-if="!show_new_request_form" class="middleview">
+                <div class="uk-text-center uk-padding uk-padding-remove-top">
+                    <h1 class="title-heading">Create Request</h1>
+                </div>
+                <vk-grid gutter="medium" id="add-new-request" class="uk-child-width-1-4@l uk-child-width-1-2@s uk-flex-center uk-text-center uk-text-uppercase">
+                    <div v-for="(item, index) in request_types" :key="index" @click="showNewRequestForm(item.type)">
+                        <vk-icon :icon="item.icon" ratio="1.5"></vk-icon>
+                        <div>{{item.label}}</div>
+                    </div>
+                </vk-grid>
+            </div>
+
+            <div v-if="show_new_request_form" class="topview">
+                <RequestForm :category="new_request" v-on:close-form="closeForm"/>
+                <div class="uk-position-top-right uk-padding-small">
+                    <nuxt-link to="/">
+                        <vk-icon icon="close" href="#" ratio="1.5" class="uk-icon-button"></vk-icon>
+                    </nuxt-link>
+                </div>
             </div>
         </div>
-    </div>
-  </section>
+    </section>
 </template>
 
 <script>

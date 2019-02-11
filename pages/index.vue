@@ -5,8 +5,8 @@
       </vk-grid>
 
 
-      <div class="uk-position-bottom-right uk-padding-small">
-          <nuxt-link to="/new-request" class="add-button"><vk-icon icon="plus-circle" ratio="2" class="show-add-modal"></vk-icon></nuxt-link>
+      <div class="uk-position-bottom-right uk-position-fixed uk-padding-small">
+          <nuxt-link to="/new-request" class="add-button"><vk-icon icon="plus-circle" ratio="3" class="show-add-modal"></vk-icon></nuxt-link>
       </div>
 
   </section>
@@ -23,7 +23,7 @@
       components: {
           RequestCard,
       },
-      async fetch({store}) {
+      async fetch({store}) {    
         await store.dispatch('requests/get')
       },
       data () {

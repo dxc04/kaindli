@@ -5,7 +5,7 @@ module.exports = {
      ** Headers of the page
      */
     head: {
-        title: 'emquest',
+        title: 'kaindli',
         meta: [{
             charset: 'utf-8'
         },
@@ -16,7 +16,7 @@ module.exports = {
             {
                 hid: 'description',
                 name: 'description',
-                content: 'Employee Requests Portal'
+                content: 'kaindli is an app which serves as a portal to post and manage requests within an organization.'
             }
         ],
         link: [{
@@ -34,7 +34,7 @@ module.exports = {
     },
     loadingIndicator: {
         name: 'circle',
-        color: '#3B8070',
+        color: '#731f7e',
         background: 'white'
     },
     /*

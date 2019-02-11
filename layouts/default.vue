@@ -2,7 +2,7 @@
 
     <vk-grid gutter="collapse">
         <div class="layout-sidebar uk-visible@m">
-            <div class="title-heading uk-text-center uk-padding-small"><nuxt-link to="/">emquest</nuxt-link></div>
+            <div class="title-heading uk-text-center uk-padding-small"><nuxt-link to="/">kaindli</nuxt-link></div>
             <vk-nav class="uk-align-left main-nav uk-width-1-1">
                 <vk-nav-item href="#" class="uk-width-auto" icon="album" title="REQUESTS"></vk-nav-item>
                 <vk-nav-item href="#" icon="users" title="EMPLOYEES"></vk-nav-item>
@@ -42,7 +42,7 @@
 
             <vk-navbar transparent>
                 <vk-icon icon="menu" ratio="1.5" class="uk-margin-small-left uk-hidden@m"></vk-icon>
-                <vk-navbar-logo class="title-heading app-title-small uk-hidden@s" slot="center">emquest</vk-navbar-logo>
+                <vk-navbar-logo class="title-heading app-title-small uk-hidden@s" slot="center">kaindli</vk-navbar-logo>
 
                 <vk-navbar-nav slot="right">
                     <vk-navbar-item>
@@ -62,14 +62,19 @@ import { mapGetters } from 'vuex'
 import moment from 'moment';
 
 export default {
+    head () {
+        return {
+            title: 'kaindli',
+        }
+    },
     computed: {
         ...mapGetters(['isAuth', 'authUser']),
         fullName: function() {
             return this.authUser.first_name + ' ' + this.authUser.last_name
         },
-       dateHired: function() {
+        dateHired: function() {
            return moment(this.authUser.date_hired).format("MM/DD/YYYY");
-       },
+        },
     },
     methods: {
         async logout() {

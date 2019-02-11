@@ -1,6 +1,6 @@
-# emquest
+# kaindli
 
-> Employee Requests Portal
+> kaindli is an app which serves as a portal to post and manage requests within an organization.
 
 ## Build Setup
 
