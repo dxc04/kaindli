@@ -4,7 +4,7 @@ import assign from 'lodash.assign';
 export const state = () => ({
     list: [],
     request: {},
-});
+}); 
 
 export const mutations = {
   set(state, requests) {
